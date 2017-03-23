@@ -1,0 +1,82 @@
+<div class="header-top-w3layouts">
+	<div class="container">
+		<div class="col-md-6 logo-w3">
+			<a href="/"><img src="{{ header.site_logo.url }}" alt="" /></a>
+		</div>
+		<div class="col-md-6 phone-w3l">
+			<ul>
+				<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></li>
+				<li>+ 1800 00 000</li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<div class="header-bottom-w3ls">
+	<div class="container">
+		<div class="col-md-10 col-sm-10 col-xs-12 navigation-agileits">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header nav_2">
+					<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+						<ul class="nav navbar-nav ">
+							{% if active==="/" %}
+							<li class="active"><a href="/" class="hyper"><span>Home</span></a></li>
+							{% else %}
+							<li><a href="/" class="hyper"><span>Home</span></a></li>
+							{% endif %}
+							{% for nav in header.navigation %}
+								{% if nav.category[0].url===active %}
+								<li class="active"><a href="{{ nav.category[0].url }}" class="hyper"><span>{{ nav.title }}</span></a></li>
+								{% else %}
+								<li><a href="{{ nav.category[0].url }}" class="hyper"><span>{{ nav.title }}</span></a></li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+				</div>
+			</nav>
+		</div>
+		<script>
+			$(document).ready(function(){
+				$(".dropdown").hover(
+					function() {
+						$('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+						$(this).toggleClass('open');
+					},
+					function() {
+						$('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+						$(this).toggleClass('open');
+					}
+				);
+			});
+//			$(window).on("load",function(){
+//				if($(".footer").offset().top < $(window).height()-$(".footer").height()){
+//					$(".footer").css({"top":$(window).height()-$(".footer").height() - 60,"position":"absolute"});
+//				}
+//			});
+		</script>
+		<div class="col-md-2 col-sm-2 col-xs-3 cart-wthree">
+			<div class="cart">
+				<form action="#" method="post" class="last">
+					<input type="hidden" name="cmd" value="_cart" />
+					<input type="hidden" name="display" value="1" />
+					<button class="snipcart-checkout w3view-cart" type="submit" name="submit" value="">
+						<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+						<div class="shopping-cart">
+							<div class="snipcart-summary cart-count">
+								<span class="snipcart-total-items cart-count-number"></span>
+							</div>
+						</div>
+					</button>
+				</form>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>

@@ -1,0 +1,136 @@
+{% extends "index.html" %}
+
+{% block content %}
+<section class="main-content">
+<div class="products">
+	<div class="container">
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                 <h4 class="modal-title" id="myModalLabel">Demo Site</h4>
+	            </div>
+	            <div class="modal-body">This is a Demo E-Commerce site powered by Built.io Contentstack</div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+		<div class="single-page">
+			<div class="single-page-row" id="detail-21">
+				<div class="col-md-6 single-top-left vcenter">
+					<div class="thumb-image detail_images flexslider">
+						<ul class="slides">
+							{% for image in product.featured_image %}
+							<li data-thumb="{{ image.url }}">
+								<img src="{{ image.url }}" data-imagezoom="true" class="img-responsive" alt="Image" draggable="false">
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 single-top-right vcenter">
+					<h3 class="item_name">{{ product.title }}</h3>
+					{% if product.offer_price %}
+						{% if product.offer_price >= product.price %}
+						<div class="single-price">
+							<ul>
+								<li>Listed Price </li>
+								<li class="offer-price-text">${{ product.price }}</li>
+							</ul>
+						</div>
+						{% else %}
+						<div class="actual-price"><del>${{ product.price }}</del></div>
+						<div class="single-price">
+							<ul>
+								<li>Now available at </li>
+								<li class="offer-price-text">${{ product.offer_price }}</li>
+							</ul>
+						</div>
+						{% endif %}
+					{% else %}
+					<div class="single-price">
+						<ul>
+							<li>Now available at </li>
+							<li class="offer-price-text">${{ product.price }}</li>
+						</ul>
+					</div>
+					{% endif %}
+					<p class="single-price-text">{{ product.description }}</p>
+					<form action="#" method="post">
+						<input type="hidden" name="cmd" value="_cart" />
+						<input type="hidden" name="add" value="1" />
+						<input type="hidden" name="w3ls1_item" value="Handbag" />
+						<input type="hidden" name="amount" value="540.00" />
+						{% if product.in_stock %}
+							{% if product.offer_price >= product.price %}
+							<button type="submit" class="snipcart-add-item w3ls-cart demoAlert"
+												data-item-id="{{ product.uid }}"
+											    data-item-name="{{ product.title }}"
+											    data-item-price="{{ product.price }}"
+											    data-item-weight="20"
+											    data-item-url="{{ product.url }}">
+							<i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+							{% else %}
+							<button type="submit" class="snipcart-add-item w3ls-cart demoAlert"
+												data-item-id="{{ product.uid }}"
+											    data-item-name="{{ product.title }}"
+											    data-item-price="{{ product.offer_price }}"
+											    data-item-weight="20"
+											    data-item-url="{{ product.url }}">
+							<i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+							{% endif %}
+						{% else %}
+						<button type="submit" class="btn btn-warning" disabled="disabled"
+											data-item-id="{{ product.uid }}"
+										    data-item-name="{{ product.title }}"
+										    data-item-price="{{ product.offer_price }}"
+										    data-item-weight="20"
+										    data-item-url="{{ product.url }}">
+						<i class="fa fa-cart-plus" aria-hidden="true"></i> Out of Stock!</button>
+						{% endif %}
+					</form>
+				</div>
+			   <div class="clearfix"> </div>
+			</div>
+		</div>
+		<!-- //collapse -->
+	</div>
+</div>
+	{% if product.related_products.length != 0 %}
+	<div class="container recommendation">
+		<h4>Related Products</h4>
+		<ul id="mycarousel" class="nbs-flexisel-ul">
+			{% for related in product.related_products %}
+			<li class="nbs-flexisel-item col-md-4 col-sm-6 col-xs-12 women-dresses">
+				<div class="women-grids wp1 animated wow slideInUp product-item" data-wow-delay=".5s">
+					<a href="{{ related.url }}"><div class="product-img">
+						<img src="{{ related.featured_image[0].url }}" alt="" />
+						<div class="p-mask">
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="add" value="1" />
+								<input type="hidden" name="w3ls1_item" value="Shoes" />
+								<input type="hidden" name="amount" value="50.00" />
+								<button type="submit" class="snipcart-add-item w3ls-cart pw3ls-cart demoAlert"
+									data-item-id="{{ related.uid }}"
+									data-item-name="{{ related.title }}"
+									data-item-price="{{ related.offer_price }}"
+									data-item-weight="20"
+									data-item-url="{{ related.url }}">
+								<i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+							</form>
+						</div>
+					</div></a>
+					<h4>{{ related.title }}</h4>
+					<h5>${{ related.offer_price }}</h5>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% endif %}
+</section>
+{% endblock %}

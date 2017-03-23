@@ -1,0 +1,102 @@
+{% extends "index.html" %}
+
+{% block content %}
+<section class="main-content">
+	<div class="container">
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                 <h4 class="modal-title" id="myModalLabel">Demo Site</h4>
+	            </div>
+	            <div class="modal-body">This is a Demo E-Commerce site powered by Built.io Contentstack</div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	{% if products.length!==0 %}
+		{% for product in products %}
+		<div class="col-md-4 col-sm-6 col-xs-12 women-dresses">
+			<div class="women-grids wp1 animated wow slideInUp product-item" data-wow-delay=".5s">
+				<a href="{{ product.url }}"><div class="product-img">
+					<img src="{{ product.featured_image[0].url }}" alt="" />
+					<div class="p-mask">
+						<form action="#" method="post">
+							{% if product.in_stock %}
+								{% if product.offer_price > product.price %}
+								<button type="submit" class="snipcart-add-item w3ls-cart pw3ls-cart demoAlert"
+								    data-item-id="{{ product.uid }}"
+								    data-item-name="{{ product.title }}"
+								    data-item-price="{{ product.price }}"
+								    data-item-weight="20"
+								    data-item-url="{{ product.url }}">
+								<i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+								{% else %}
+								<button type="submit" class="snipcart-add-item w3ls-cart pw3ls-cart demoAlert"
+								    data-item-id="{{ product.uid }}"
+								    data-item-name="{{ product.title }}"
+								    data-item-price="{{ product.offer_price }}"
+								    data-item-weight="20"
+								    data-item-url="{{ product.url }}">
+								<i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+								{% endif %}
+							{% else %}
+							<button type="submit" class="btn btn-warning w3ls-cart pw3ls-cart" disabled="disabled"
+							    data-item-id="{{ product.uid }}"
+							    data-item-name="{{ product.title }}"
+							    data-item-price="{{ product.offer_price }}"
+							    data-item-weight="20"
+							    data-item-url="{{ product.url }}">
+							<i class="fa fa-cart-plus" aria-hidden="true"></i> Out of Stock</button>
+							{% endif %}
+						</form>
+					</div>
+				</div></a>
+				<h4>{{ product.title }}</h4>
+				{% if product.offer_price %}
+					{% if product.offer_price > product.price %}
+					<h5>${{ product.price }}</h5>
+					{% else %}
+					<h5>${{ product.offer_price }}</h5>
+					{% endif %}
+				{% else %}
+				<h5>${{ product.price }}</h5>
+				{% endif %}
+			</div>
+		</div>
+		{% endfor %}
+		<div class="pagination-sec">
+			<div class="pagination">
+				{% if current===1 %}
+				<!-- Diable previous on home page-->
+				<a href="?page={{ current+1 }}" onclick="return false;" class="next btn" disabled="disabled">Prev</a>
+				<div class="total-page-count">Page {{ current }} of {{ page_count}}</div>
+				<!-- If the count is less than the one displayed, disable next! -->
+				{% if count>9 %}
+				<a href="?page={{ current+1 }}" class="next">Next</a>
+				{% else %}
+				<a href="?page={{ current+1 }}" onclick="return false;" class="next btn" disabled="disabled">Next</a>
+				{% endif %}
+				{% elif current===page_count %}
+				<!-- Disable next on last page -->
+				<a href="?page={{ current-1 }}" class="prev">Prev</a>
+				<div class="total-page-count">Page {{ current }} of {{ page_count }}</div>
+				<a href="?page={{ current+1 }}" onclick="return false;" class="next btn" disabled="disabled">Next</a>
+				{% else %}
+				<a href="?page={{ current-1 }}" class="prev">Prev</a>
+				<div class="total-page-count">Page {{ current }} of {{ page_count }}</div>
+				<a href="page={{ current+1 }}" class="next">Next</a>
+				{% endif %}
+			</div>
+		</div>
+	{% else %}
+	<div class="no-pro">
+		Sorry, there are no products currently listed on the page you're looking!
+	</div>
+	{% endif %}
+	</div>
+</section>
+{% endblock %}

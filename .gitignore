@@ -1,0 +1,6 @@
+# Ignore the following
+node_modules/
+config/*
+
+# Do not ignore these
+!config/default.js
