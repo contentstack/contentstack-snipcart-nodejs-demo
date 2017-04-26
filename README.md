@@ -6,4 +6,4 @@ Here’s the [link to a sample shopping portal](https://contentstack-snipcart-in
 
 ![Homepage Screenshot](./sample-homepage-screenshot.png?raw=true "Homepage Screenshot")
 
-This project contains source code for the tutorial given in our blog post.
+This project contains source code for the tutorial given in our [blog post](https://www.built.io/blog/integrating-headless-cms-builtio-contentstack-with-ecommerce-solution-snipcart).
