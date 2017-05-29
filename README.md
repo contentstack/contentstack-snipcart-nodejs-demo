@@ -8,7 +8,7 @@
 ![Product page Screenshot](./sample-product-screenshot.png?raw=true "Product page screenshot")
 
 ### Live Demo
-You can check the [live demo]() to get first-hand experience of the website.
+You can check the [live demo](https://contentstack-snipcart-integration.now.sh/) to get first-hand experience of the website.
 
 ### Tutorial
 We have created an in-depth tutorial on how you can create an ecommerce website using Snipcart ecommerce solution and Built.io Contentstack. By following the steps given in the tutorial, you will be able to design an online shopping website similar to the one given in the demo. 
