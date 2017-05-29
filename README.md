@@ -1,9 +1,19 @@
-## Integrating Snipcart with Built.io Contentstack to create an e-commerce portal
+## Create an ecommerce website using Snipcart and Built.io Contentstack
 
-Using [Built.io Contentstack](https://www.built.io/products/contentstack/overview) (CMS) and Snipcart (ecommerce solution), you can create a powerful online ecommerce site in a few simple steps. The in-depth tutorial to integrate these two solutions to build your shopping portal is detailed out in our blog post.
+**About Built.io Contentstack**: Built.io Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
 
-Here’s the [link to a sample shopping portal](https://contentstack-snipcart-integration.now.sh/). You will be able to create a similar one at the end of the tutorial.
+**About this project**: Create a professional website using Snipcart and Built.io Contentstack.
 
-![Homepage Screenshot](./sample-homepage-screenshot.png?raw=true "Homepage Screenshot")
+![Homepage Screenshot](./sample-homepage-screenshot.png?raw=true "Homepage screenshot")
+![Product page Screenshot](./sample-product-screenshot.png?raw=true "Product page screenshot")
 
-This project contains source code for the tutorial given in our [blog post](https://www.built.io/blog/integrating-headless-cms-builtio-contentstack-with-ecommerce-solution-snipcart).
+### Live Demo
+You can check the [live demo]() to get first-hand experience of the website.
+
+### Tutorial
+We have created an in-depth tutorial on how you can create an ecommerce website using Snipcart ecommerce solution and Built.io Contentstack. By following the steps given in the tutorial, you will be able to design an online shopping website similar to the one given in the demo. 
+Tutorial to create an ecommerce website using Snipcart and Built.io Contentstack.
+
+### Documentation
+* Read Built.io Contentstack [docs](https://contentstackdocs.built.io/)
+* Learn about Snipcart [docs](https://docs.snipcart.com/)
