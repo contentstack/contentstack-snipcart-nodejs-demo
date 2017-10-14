@@ -1,8 +1,8 @@
-## Create an ecommerce website using Snipcart and Built.io Contentstack
+## Create an ecommerce website using Snipcart and Contentstack
 
-**About Built.io Contentstack**: Built.io Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
+**About Contentstack**: [Contentstack](https://www.contentstack.com/) is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
 
-**About this project**: Create a professional website using Snipcart and Built.io Contentstack.
+**About this project**: Create a professional website using Snipcart and Contentstack.
 
 ![Homepage Screenshot](./sample-homepage-screenshot.png?raw=true "Homepage screenshot")
 ![Product page Screenshot](./sample-product-screenshot.png?raw=true "Product page screenshot")
@@ -11,9 +11,9 @@
 You can check the [live demo](https://contentstack-snipcart-integration.now.sh/) to get first-hand experience of the website.
 
 ### Tutorial
-We have created an in-depth tutorial on how you can create an ecommerce website using Snipcart ecommerce solution and Built.io Contentstack. By following the steps given in the tutorial, you will be able to design an online shopping website similar to the one given in the demo. 
-Tutorial to create an ecommerce website using Snipcart and Built.io Contentstack.
+We have created an in-depth tutorial on how you can create a website using Nodejs express framework. By following the steps given in the tutorial, design a website similar to the one given in the demo.
 
+[Tutorial to create an ecommerce website using Snipcart and Contentstack.](https://www.contentstack.com/docs/example-apps/build-an-ecommerce-website-using-snipcart-and-contentstack)
 ### Documentation
-* Read Built.io Contentstack [docs](https://contentstackdocs.built.io/)
+* Read about Contentstack [docs](https://www.contentstack.com/docs/)
 * Learn about Snipcart [docs](https://docs.snipcart.com/)
