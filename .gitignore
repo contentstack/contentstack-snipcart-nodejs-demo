@@ -1,6 +1,7 @@
 # Ignore the following
 node_modules/
 config/*
+package-lock.json
 
 # Do not ignore these
 !config/default.js
